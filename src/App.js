@@ -8,8 +8,8 @@ function App() {
   let user1 = new User("pera", "Petar", "Petrovic");
   let user2 = new User("sima", "Sima", "Simic");
   let bank = new Bank();
-  bank.createAccount(user1);
-  bank.createAccount(user2);
+  bank.createAccount(user1, "EUR", ["USD", "CHF", "GBP"]);
+  bank.createAccount(user2, "CHF", ["EUR", "GBP", "USD"]);
   console.log(bank);
   return (
     <div className="App">
