@@ -1,14 +1,14 @@
-import { Account } from "./Account";
+import { UserAccount } from "./UserAccount";
 
 class Bank {
    constructor() {
-      this.accounts = {};
+      this.userAccounts = {};
    }
-   createAccount = (user, primaryCurrency, secondaryCurrencies) => {
-      if (user.username in this.accounts) {
+   createUserAccount = (user, primaryCurrency, secondaryCurrencies) => {
+      if (user.username in this.userAccounts) {
          throw new Error("Account already exists for user " + user.name);
       }
-      this.accounts[user.username] = new Account(user, primaryCurrency, secondaryCurrencies);
+      this.userAccounts[user.username] = new UserAccount(user, primaryCurrency, secondaryCurrencies);
    }
 }
 export { Bank };
